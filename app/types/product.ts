@@ -7,3 +7,5 @@ export interface Product {
   images: string[];
   color?: string;
 }
+
+export type NewProduct = Omit<Product, "id">;

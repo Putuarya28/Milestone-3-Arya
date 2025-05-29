@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-// import { Questrial } from "next/font/google";
 import "@/app/globals.css";
-import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 import Provider from "@/components/Hoc/Provider";
 import { CartProvider } from "@/components/CartContext";
-
-// const questrial = Questrial({ subsets: ["latin"], weight: ["400"], variable: "--font-questrial" });
+import AuthProvider from "@/components/AuthProvider";
+import ClientNavWrapper from "@/components/ClientNavWrapper";
 
 export const metadata: Metadata = {
   title: "Revoshop - Guitar Collection",
@@ -20,12 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <CartProvider>
+        <AuthProvider>
           <Provider>
-            <ResponsiveNav />
-            {children}
+            <CartProvider>
+              <ClientNavWrapper />
+              {children}
+            </CartProvider>
           </Provider>
-        </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

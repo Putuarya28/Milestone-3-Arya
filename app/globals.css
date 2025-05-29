@@ -1,17 +1,29 @@
 @import "tailwindcss";
 
-
 .dark body {
-  background-color: #18181b; 
+  background-color: #18181b;
   color: #f3f4f6;
 }
 
 .dark .bg-white {
-  background-color: #27272a !important; 
+  background-color: #27272a;
 }
 
-.dark .text-gray-800,
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+.text-neutral-900 {
+  color: #171717;
+}
+
+
+.dark .text-gray-800 {
+  color: #e5e7eb;
+}
+
 .dark .text-neutral-900 {
-  color: #f3f4f6 !important; 
+  color: #f3f4f6;
 }
 

@@ -1,3 +1,5 @@
+export const revalidate = 60;
+
 import { getProductById } from '@/lib/api';
 import Image from 'next/image';
 import { Product } from '@/app/types/product';
@@ -17,7 +19,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     <div className="min-h-[80vh] flex items-center justify-center px-4 pt-16">
       <div className="w-full max-w-5xl flex flex-col md:flex-row gap-12 items-center justify-center">
         {/* Image Section */}
-        <div className="flex justify-center items-center bg-gray-100 dark:bg-neutral-800 rounded-xl p-8 mx-auto">
+        <div className="flex justify-center items-center bg-gray-100 dark:bg-neutral-100 rounded-xl p-8 mx-auto">
           <div className="relative w-72 h-96 md:w-96 md:h-[28rem]">
             <Image
               src={product.images[0] || '/placeholder-guitar.jpg'}

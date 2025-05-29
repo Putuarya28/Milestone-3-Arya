@@ -5,13 +5,13 @@ import { getFenderGuitars } from '@/lib/api';
 import type { Product } from '@/app/types/product'; 
 
 export default async function Home() {
-  // Fetch products from Platzi API
+  
   const products: Product[] = await getFenderGuitars();
   console.log("Fetched products:", products);
   
   
   const guitarProducts = products.filter((product) => 
-    product.title.includes('Stratocaster')
+    product.title.includes('RevoShop')
   );
   console.log("Filtered guitars:", guitarProducts);
 

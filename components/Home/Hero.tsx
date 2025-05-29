@@ -2,7 +2,7 @@
 import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown, Facebook, Instagram, MessageCircle } from "lucide-react"
+import { ChevronDown, Facebook, Instagram} from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
@@ -16,17 +16,15 @@ const HeroSection: React.FC = () => {
 
   return (
     <main className="flex-1 relative mt-23">
-      <div className="flex h-[calc(100vh-10px)]">
-        <div className="w-470 bg-[#FD8DB7]">
-          <div className="">
-            <Image
-              src="/images/BG-guitar.svg"
-              alt="Fender Stratocaster Silhouette"
-              fill
-              className="object-cover ml-80 scale-x-[-1]"
-              priority
-            />
-          </div>
+      <div className="flex h-[calc(100vh)]">
+        <div className="">
+          <Image
+            src="/images/BG-guitar.svg"
+            alt="Fender Stratocaster Silhouette"
+            fill
+            className="object-cover -ml-15"
+            priority
+          />
         </div>
         <div className="w-1/2 bg-neutral-920"></div>
       </div>
@@ -138,7 +136,7 @@ const ChatBubble: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed bottom-6 right-6 bg-yellow-400 p-3 rounded-full cursor-pointer"
+      className="fixed bottom-6 right-6  p-3 rounded-full cursor-pointer"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{
         opacity: isLoaded ? 1 : 0,
@@ -159,7 +157,6 @@ const ChatBubble: React.FC = () => {
       }}
       whileTap={{ scale: 0.95 }}
     >
-      <MessageCircle className="h-6 w-6 text-white" />
     </motion.div>
   )
 }

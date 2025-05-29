@@ -1,26 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
-import { getFenderGuitars } from "@/lib/api";
-import ProductCard from "@/components/ProductCard";
-import { Product } from "@/app/types/product";
+import React, { Suspense, lazy } from "react";
+import { useFenderGuitars } from "./useFenderGuitars";
+
+const ProductCard = lazy(() => import("@/components/ProductCard"));
 
 const ProductsPage = () => {
-  const [guitars, setGuitars] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await getFenderGuitars();
-        setGuitars(data);
-      } catch (error) {
-        console.error("Error fetching guitars:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
+  const { guitars, loading } = useFenderGuitars();
 
   return (
     <div className="p-4">
@@ -30,9 +15,11 @@ const ProductsPage = () => {
         <p className="text-gray-500">Loading...</p>
       ) : guitars.length > 0 ? (
         <div className="grid grid-cols-3 gap-4">
-          {guitars.map((guitar) => (
-            <ProductCard key={guitar.id} product={guitar} />
-          ))}
+          <Suspense fallback={<p>Loading products...</p>}>
+            {guitars.map((guitar) => (
+              <ProductCard key={guitar.id} product={guitar} />
+            ))}
+          </Suspense>
         </div>
       ) : (
         <p className="text-gray-500">No Fender guitars found.</p>

@@ -1,7 +1,7 @@
 import type React from "react"
 import PromotionClient from "../Home/PromotionClient"
 
-// This data could come from a CMS, API, or database in a real application
+
 const guitars = [
   { color: "Blue", bgColor: "#baeff5", image: "/images/tom-delonge-stratocaster.png" },
   { color: "Black", bgColor: "#131313", image: "/images/player-ii-modified-stratocaster-hss-floyd-rose.png" },
@@ -9,7 +9,7 @@ const guitars = [
   { color: "Red", bgColor: "#710004", image: "/images/tash-sultana-stratocaster.png" },
 ]
 
-// Server component for static site generation
+
 const PromotionSection: React.FC = () => {
   return (
     <section id="promotion-section" className="w-full bg-neutral-920 py-16">
@@ -29,13 +29,13 @@ const PromotionSection: React.FC = () => {
                 className="w-full md:w-1/5 relative h-80 md:h-[400px]"
                 style={{ backgroundColor: guitar.bgColor }}
               >
-                {/* Static image for SEO */}
+                
               </div>
             ))}
           </div>
         </div>
 
-        {/* Client component for animations */}
+        
         <PromotionClient guitars={guitars} />
       </div>
     </section>

@@ -48,7 +48,7 @@ const PromotionClient: React.FC<PromotionClientProps> = ({ guitars }) => {
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.8 }}
       >
-        {/* Text Section with gradient */}
+       
         <motion.div
           className="flex flex-col justify-center items-start w-1/3 h-full px-10"
           style={{
@@ -69,7 +69,7 @@ const PromotionClient: React.FC<PromotionClientProps> = ({ guitars }) => {
           </Link>
         </motion.div>
 
-        {/* Guitar Images, flush with no gaps */}
+      
         <div className="flex-1 flex flex-row h-full">
           {guitars.map((guitar, index) => (
             <motion.div

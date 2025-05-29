@@ -1,14 +1,15 @@
 import React from 'react'
 import Hero from './Hero'
 import PromotionSection from '../Home/Promotion'
+import ContactSection from './ContactSection'
 
 const Home = () => {
   return (
-    <div className='h-[2000px] overflow-hidden'>
+    <div>
       <Hero />
       <PromotionSection />
+      <ContactSection />
     </div>
-    
   )
 }
 
